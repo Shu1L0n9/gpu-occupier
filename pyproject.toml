@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpu-occupier"
+version = "0.1.0"
+description = "A multi-functional GPU occupation daemon"
+authors = [{ name = "Shu1L0n9", email = "Shu1L0n9@gmail.com" }]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.6"
+dependencies = [
+    "torch",
+    "nvidia-smi"
+]
+
+[tool.setuptools]
+packages = ["gpu_occupier"]
+package-dir = { "" = "src" }
+
+[project.scripts]
+gpu-occupier = "gpu_occupy.occupy:main"
