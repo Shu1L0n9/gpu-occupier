@@ -1,4 +1,4 @@
-```markdown
+
 # GPU Occupier
 
 GPU Occupier is a Python package designed to monitor and **occupy** GPU resources efficiently. This package is particularly useful for users who need to manage GPU memory usage for various applications, such as deep learning and data processing.
@@ -159,4 +159,3 @@ A: The program is designed to release occupied GPU memory when it's terminated g
 1.  **Manual Check:**  Run the `nvidia-smi` command.
 2.  **Identify and Terminate:**  If you see processes occupying GPU memory that should have been released, manually terminate those processes using the `kill` command (e.g., `kill <process_id>`). You can find the process ID from `nvidia-smi`.
 If you frequently encounter this issue, you might want to investigate potential causes of the crashes, such as out-of-memory errors in the command being run.  Increasing the memory usage threshold or decreasing the occupation ratio could help mitigate this.
-```
