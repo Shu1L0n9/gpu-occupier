@@ -27,6 +27,8 @@ Then, install the package:
 pip install .
 ```
 
+Below is the command you will run the **occupier**, so enjoy it.
+
 ```bash
 gpu-occupier
 ```
@@ -49,7 +51,7 @@ This will:
 ### Example 2: Automatically Select and **Occupy** Multiple GPUs
 
 ```bash
-python gpu_occupier.py --num-gpus 2 --threshold 20 --ratio 0.7 --timeout 12
+gpu_occupier --num-gpus 2 --threshold 20 --ratio 0.7 --timeout 12
 ```
 
 This will:
@@ -61,7 +63,7 @@ This will:
 ### Example 3: Execute a Command After Occupation
 
 ```bash
-python gpu_occupier.py --gpus 0,1 --threshold 10 --command "python train.py" --work-dir "/path/to/project" --exit-after-command
+gpu_occupier --gpus 0,1 --threshold 10 --command "python train.py" --work-dir "/path/to/project" --exit-after-command
 ```
 
 This will:
@@ -74,7 +76,7 @@ This will:
 ### Example 4: Use English Interface
 
 ```bash
-python gpu_occupier.py --gpus 0 --threshold 25 --ratio 0.5 --lang en
+gpu_occupier --gpus 0 --threshold 25 --ratio 0.5 --lang en
 ```
 
 This will:
@@ -112,7 +114,7 @@ This will:
 ### Run in Background with nohup
 
 ```bash
-nohup python gpu_occupier.py --gpus 0 --threshold 20 --timeout 240 > gpu_occupier.log 2>&1 &
+nohup gpu_occupier --gpus 0 --threshold 20 --timeout 240 > gpu_occupier.log 2>&1 &
 ```
 
 ### Monitor Multiple GPUs and Execute Different Commands
@@ -122,10 +124,10 @@ You can write a wrapper script to launch separate processes for each GPU:
 ```bash
 #!/bin/bash
 # Launch occupation and execute Command A on GPU 0
-python gpu_occupier.py --gpus 0 --command "python task_a.py" --work-dir "/path/to/task_a" &
+gpu_occupier --gpus 0 --command "python task_a.py" --work-dir "/path/to/task_a" &
 
 # Launch occupation and execute Command B on GPU 1
-python gpu_occupier.py --gpus 1 --command "python task_b.py" --work-dir "/path/to/task_b" &
+gpu_occupier --gpus 1 --command "python task_b.py" --work-dir "/path/to/task_b" &
 
 wait
 ```
